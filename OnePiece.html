@@ -1,0 +1,122 @@
+mm<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episódios</title>
+</head>
+
+<body>
+
+    <p>Qual o episódio que você quer assistir ?
+        <input id="input_ep" type="number">
+    </p>
+
+    <p>Quanto tempo você tem disponível ?
+        <input id="input_tempDisp" type="number">
+    </p>
+
+    <p>Qual a unidade de medida de tempo ?
+        <select id="select_tempo">
+            <option value="#" disabled selected>Selecione uma opção</option>
+            <option value="minutos">Minutos</option>
+            <option value="horas">Horas</option>
+        </select>
+    </p>
+
+    <p>Deseja pular a abertura ?
+        <select id="select_abertura">
+            <option value="#" disabled selected>Selecione uma opção</option>
+            <option value="s">Sim</option>
+            <option value="n">Não</option>
+        </select>
+    </p>
+
+    <p>Deseja pular o encerramento ?
+        <select id="select_encerramento">
+            <option value="#" disabled selected>Selecione uma opção</option>
+            <option value="s">Sim</option>
+            <option value="n">Não</option>
+        </select>
+    </p>
+
+    <button onclick="assistir()">Assistir Episódios</button>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function assistir() {
+
+        var msg = "";
+        var episodios = Number(input_ep.value);
+        var tempoDisp = Number(input_tempDisp.value);
+        var tempo = select_tempo.value;
+        var abertura = select_abertura.value;
+        var encerramento = select_encerramento.value;
+        var tempoEpisodio = 0;
+        var abert = 1;
+        var enc = 1;
+        var cont = 1;
+
+        if (episodios < 1 || episodios > 1100) {
+
+            alert("O número do episódio é inválido");
+
+        } else {
+
+            if (tempo == 'horas') {
+                tempoDisp *= 60;
+            } else {
+
+                tempoDisp *= 1;
+            }
+
+            if (abertura == 's' && encerramento == 's') {
+
+                
+
+
+
+            } else if (abertura == 's' && encerramento == 'n') {
+
+
+            } else if (abertura == 'n' && encerramento == 's') {
+
+
+            } else if (abertura == 'n' && encerramento == 'n') {
+
+                // for(var assist = 0; assist <= tempoDisp ; assist++){
+                
+                // msg = `<p>Episódio: ${episodios}</p>`;
+                
+                // if (abertura == 'n') {
+                //    for (abert; abert <= tmpAbertura; abert++)
+                //    msgA += `Abertura: ${abert} assistido <br>`;
+                // }
+                
+                // for (var i = abert; i <= tempoEpisodio; i++) {
+                //    msgEp += `Minuto: ${i} assistido <br>`;
+                // }
+                
+                // if (encerramento = 'n'){
+                //    for (enc = i; enc <= tmpEncerramento; enc++)
+                //    msgEp += `Encerramento: ${enc} assistido <br>`;
+                // }
+                
+                
+            }
+
+
+        }
+        div_msg.innerHTML = msg;
+
+
+    }
+
+
+</script>
